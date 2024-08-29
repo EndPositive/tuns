@@ -14,6 +14,7 @@
 # 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+$stdout.sync = true
 
 $:.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 $:.unshift File.join(File.dirname(__FILE__), '..', 'lib', 'tuns')
@@ -65,10 +66,10 @@ opts = OptionParser::new do |opts|
   opts.on("-p", "--bind-port PORT", "Port to bind to. By default, binds to port 53") do |s|
     $bindport = s
   end
-  opts.on("-i", "--ip", "IP for tun device") do |i|
+  opts.on("-i", "--ip IP", "IP for tun device") do |i|
     $ip = i
   end
-  opts.on("-t", "--remote-ip", "IP for other endpoint on tun") do |i|
+  opts.on("-t", "--remote-ip IP", "IP for other endpoint on tun") do |i|
     $rip = i
   end
 end
